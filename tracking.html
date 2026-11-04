@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracking - BukuKu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+<header class="top">
+  <a class="brand" href="dashboard.html">BukuKu</a>
+  <nav aria-label="Menu utama">
+    <a href="dashboard.html">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Tracking</a><a href="#" id="btnLogout">Logout</a>
+  </nav>
+</header>
+<main>
+<section class="card">
+  <h1>Informasi Pengiriman</h1>
+  <form id="formTrack" novalidate>
+    <label for="noDO">Nomor Delivery Order</label>
+    <input type="text" id="noDO" placeholder="Contoh: 20230012">
+    <span class="err" id="err-noDO"></span>
+    <div class="row"><button class="btn">Cari</button></div>
+  </form>
+  <p class="hint">Nomor contoh: 20230012, 20230013</p>
+</section>
+<section id="hasil" aria-live="polite"></section>
+</main>
+<footer class="foot">UTS Pemrograman Web 1 · Faizal Abdul Mu'id · 312510024 · I251A</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

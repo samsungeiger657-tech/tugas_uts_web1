@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katalog - BukuKu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+<header class="top">
+  <a class="brand" href="dashboard.html">BukuKu</a>
+  <nav aria-label="Menu utama">
+    <a href="dashboard.html">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Tracking</a><a href="#" id="btnLogout">Logout</a>
+  </nav>
+</header>
+<main>
+<section class="card">
+  <h1>Informasi Stok / Katalog</h1>
+  <p class="muted">Data dimuat dinamis dari <code>dataKatalogBuku</code> di data.js.</p>
+  <label for="cari">Cari buku</label>
+  <input type="search" id="cari" placeholder="Ketik judul atau kode buku">
+  <div class="tw">
+    <table>
+      <thead><tr><th>No</th><th>Cover</th><th>Kode</th><th>Nama Barang</th><th>Jenis</th><th>Edisi</th><th>Harga</th><th>Stok</th><th>Aksi</th></tr></thead>
+      <tbody id="tbodyStok"></tbody>
+    </table>
+  </div>
+</section>
+<section class="card">
+  <h2>Tambah Stok Baru</h2>
+  <form id="formStok" novalidate>
+    <div class="grid2">
+      <div><label for="kode">Kode barang</label><input type="text" id="kode" placeholder="ASIP4302"><span class="err" id="err-kode"></span></div>
+      <div><label for="nama">Nama barang</label><input type="text" id="nama"><span class="err" id="err-nama"></span></div>
+      <div><label for="jenis">Jenis barang</label><input type="text" id="jenis" value="Buku Ajar"><span class="err" id="err-jenis"></span></div>
+      <div><label for="edisi">Edisi</label><input type="number" id="edisi" min="1"><span class="err" id="err-edisi"></span></div>
+      <div><label for="harga">Harga (Rp)</label><input type="number" id="harga" min="1"><span class="err" id="err-harga"></span></div>
+      <div><label for="stok">Jumlah stok</label><input type="number" id="stok" min="0"><span class="err" id="err-stok"></span></div>
+    </div>
+    <div class="row"><button type="button" class="btn ghost" id="btnReset">Reset data awal</button><button class="btn">Tambah ke tabel</button></div>
+  </form>
+</section>
+</main>
+<footer class="foot">UTS Pemrograman Web 1 · Faizal Abdul Mu'id · 312510024 · I251A</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login - BukuKu</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* CSS internal: khusus halaman login */
+body{display:flex;min-height:100vh;align-items:center;justify-content:center;background:var(--ink)}
+.login-box{width:100%;max-width:400px;margin:1rem}
+</style>
+</head>
+<body data-page="login">
+<main class="login-box">
+  <section class="card">
+    <h1 style="text-align:center;font-size:2rem">BukuKu</h1> <!-- CSS inline -->
+    <p class="muted" style="text-align:center">Toko buku online. Masuk untuk mulai memesan.</p>
+    <form id="formLogin" novalidate>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="rina@gmail.com" autocomplete="username">
+      <span class="err" id="err-email"></span>
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Minimal 6 karakter" autocomplete="current-password">
+      <span class="err" id="err-password"></span>
+      <button type="submit" class="btn block">Login</button>
+    </form>
+    <div class="row center">
+      <button type="button" class="link" data-open="#modalLupa">Lupa Password</button>
+      <button type="button" class="link" data-open="#modalDaftar">Daftar</button>
+    </div>
+    <p class="hint">Akun demo: rina@gmail.com / rina123</p>
+  </section>
+</main>
+
+<div class="modal" id="modalLupa" role="dialog" aria-modal="true" aria-labelledby="tLupa">
+  <div class="modal-box">
+    <h2 id="tLupa">Lupa Password</h2>
+    <form id="formLupa" novalidate>
+      <label for="lupaEmail">Email terdaftar</label>
+      <input type="email" id="lupaEmail">
+      <span class="err" id="err-lupa"></span>
+      <div class="row"><button type="button" class="btn ghost" data-close>Batal</button><button class="btn">Kirim link reset</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="modalDaftar" role="dialog" aria-modal="true" aria-labelledby="tDaftar">
+  <div class="modal-box">
+    <h2 id="tDaftar">Daftar Akun Baru</h2>
+    <form id="formDaftar" novalidate>
+      <label for="dNama">Nama lengkap</label><input type="text" id="dNama"><span class="err" id="err-dNama"></span>
+      <label for="dEmail">Email</label><input type="email" id="dEmail"><span class="err" id="err-dEmail"></span>
+      <label for="dPass">Password</label><input type="password" id="dPass"><span class="err" id="err-dPass"></span>
+      <label for="dPass2">Ulangi password</label><input type="password" id="dPass2"><span class="err" id="err-dPass2"></span>
+      <div class="row"><button type="button" class="btn ghost" data-close>Batal</button><button class="btn">Daftar</button></div>
+    </form>
+  </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

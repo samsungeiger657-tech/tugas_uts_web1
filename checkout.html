@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pemesanan - BukuKu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+<header class="top">
+  <a class="brand" href="dashboard.html">BukuKu</a>
+  <nav aria-label="Menu utama">
+    <a href="dashboard.html">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Tracking</a><a href="#" id="btnLogout">Logout</a>
+  </nav>
+</header>
+<main>
+<section class="card">
+  <h1>Pemesanan Buku</h1>
+  <div class="grid2">
+    <div><label for="selBuku">Pilih buku</label><select id="selBuku"></select></div>
+    <div><label for="qty">Jumlah</label><input type="number" id="qty" min="1" value="1"></div>
+  </div>
+  <div class="row"><button type="button" class="btn" id="btnTambah">Tambah ke keranjang</button></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Judul</th><th>Harga</th><th>Jumlah</th><th>Subtotal</th><th>Aksi</th></tr></thead>
+      <tbody id="tbodyCart"></tbody>
+    </table>
+  </div>
+  <p class="total">Subtotal: <strong id="totalCart">Rp 0</strong></p>
+</section>
+
+<section class="card">
+  <h2>Data Pemesan dan Pembayaran</h2>
+  <form id="formOrder" novalidate>
+    <div class="grid2">
+      <div><label for="nama">Nama pemesan</label><input type="text" id="nama"><span class="err" id="err-nama"></span></div>
+      <div><label for="oemail">Email</label><input type="email" id="oemail"><span class="err" id="err-oemail"></span></div>
+      <div><label for="hp">No. HP</label><input type="tel" id="hp" placeholder="08123456789"><span class="err" id="err-hp"></span></div>
+      <div><label for="ekspedisi">Ekspedisi</label>
+        <select id="ekspedisi"><option value="">Pilih ekspedisi</option><option>JNE</option><option>J&amp;T</option><option>SiCepat</option><option>Pos Indonesia</option></select>
+        <span class="err" id="err-ekspedisi"></span></div>
+      <div><label for="paket">Jenis paket</label><select id="paket"><option>Reguler</option><option>Express</option></select></div>
+      <div><label for="metode">Metode pembayaran</label>
+        <select id="metode"><option value="">Pilih metode</option><option>Transfer Bank</option><option>E-Wallet</option><option>COD</option></select>
+        <span class="err" id="err-metode"></span></div>
+    </div>
+    <label for="alamat">Alamat pengiriman</label><textarea id="alamat" rows="3"></textarea><span class="err" id="err-alamat"></span>
+    <p class="total">Ongkir: <strong id="ongkir">Rp 0</strong> · Total bayar: <strong id="grand">Rp 0</strong></p>
+    <div class="row"><button class="btn">Buat pesanan</button></div>
+  </form>
+</section>
+
+<section class="card" id="laporan">
+  <h2>Laporan Pemesanan</h2>
+  <div class="stats"><p><strong id="rTotal">0</strong> pesanan</p><p><strong id="rItem">0</strong> buku terjual</p><p><strong id="rOmzet">Rp 0</strong> total omzet</p></div>
+</section>
+
+<section class="card" id="history">
+  <h2>History Transaksi</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>No. DO</th><th>Tanggal</th><th>Pemesan</th><th>Item</th><th>Total</th><th>Metode</th></tr></thead>
+      <tbody id="tbodyHistory"></tbody>
+    </table>
+  </div>
+</section>
+
+<div class="modal" id="modalSukses" role="dialog" aria-modal="true" aria-labelledby="tSukses">
+  <div class="modal-box">
+    <h2 id="tSukses">Pesanan berhasil dibuat</h2>
+    <p>Nomor Delivery Order kamu: <strong id="noDOBaru"></strong></p>
+    <p class="muted">Simpan nomor ini untuk cek status di halaman Tracking.</p>
+    <div class="row"><a class="btn ghost" href="tracking.html">Ke Tracking</a><button type="button" class="btn" data-close>Tutup</button></div>
+  </div>
+</div>
+</main>
+<footer class="foot">UTS Pemrograman Web 1 · Faizal Abdul Mu'id · 312510024 · I251A</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard - BukuKu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+<header class="top">
+  <a class="brand" href="dashboard.html">BukuKu</a>
+  <nav aria-label="Menu utama">
+    <a href="dashboard.html">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Tracking</a><a href="#" id="btnLogout">Logout</a>
+  </nav>
+</header>
+<main>
+<section class="card hero">
+  <h1 id="greeting">Selamat datang</h1>
+  <p class="muted" id="tanggal"></p>
+  <div class="stats">
+    <p><strong id="sJudul">0</strong> judul buku</p>
+    <p><strong id="sStok">0</strong> total stok</p>
+    <p><strong id="sOrder">0</strong> pesanan dibuat</p>
+  </div>
+</section>
+<section aria-label="Menu utama" class="menu">
+  <a href="stok.html"><h2>Informasi Stok</h2><p>Lihat dan tambah katalog buku.</p></a>
+  <a href="checkout.html"><h2>Buat Pesanan</h2><p>Pilih buku dan isi data pemesan.</p></a>
+  <a href="tracking.html"><h2>Tracking Pengiriman</h2><p>Cek status dengan nomor DO.</p></a>
+  <a href="checkout.html#laporan"><h2>Laporan Pemesanan</h2><p>Ringkasan pesanan dan omzet.</p></a>
+  <a href="checkout.html#history"><h2>History Transaksi</h2><p>Daftar semua transaksi.</p></a>
+</section>
+</main>
+<footer class="foot">UTS Pemrograman Web 1 · Faizal Abdul Mu'id · 312510024 · I251A</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
